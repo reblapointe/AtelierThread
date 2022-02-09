@@ -10,8 +10,7 @@ namespace AtelierThreads
             Thread t = Thread.CurrentThread;
             Console.WriteLine($"**ID : {t.ManagedThreadId} , " +
                 $"Priorité : {t.Priority}, " +
-                $"Est background : {t.IsBackground}, " +
-                $"Nom : {t.Name ?? "Aucun"}.");
+                $"Est background : {t.IsBackground}, ");
         }
     }
 }
