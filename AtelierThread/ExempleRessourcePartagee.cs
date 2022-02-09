@@ -10,12 +10,13 @@ namespace AtelierThreads
     {
         public static string phrase = "";
         public static Random random = new Random();
+
         public static readonly object verrouA = new object();
         public static readonly object verrouB = new object();
 
         public const int NB_LETTRES = 50;
 
-        public static void RunExempleCollision()
+        public static void RunExempleRessourcePartagee()
         {
             Task a = Task.Run(MethodeA);
             Task b = Task.Run(MethodeB);

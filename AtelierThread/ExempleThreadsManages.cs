@@ -46,7 +46,7 @@ namespace AtelierThreads
         {
             Console.WriteLine("Commencer à écouter la radio...");
             ThreadUtils.ImprimerInfoThread();
-            Thread.Sleep(20000); // On attend 20 secondes
+            Thread.Sleep(10000); // On attend 10 secondes
             Console.WriteLine("Fin de l'émission de radio.");
         }
 
