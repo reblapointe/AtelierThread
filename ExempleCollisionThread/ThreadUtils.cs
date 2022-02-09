@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 
-namespace ExempleCollisionThread
+namespace AtelierThreads
 {
     class ThreadUtils
     {

@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace ExempleCollisionThread
+namespace AtelierThreads
 {
     class ExempleThreadsManages
     {
@@ -14,7 +13,6 @@ namespace ExempleCollisionThread
 
             // BenchmarkRunner.Run<StringBenchmarkPerformance>();
             ThreadUtils.ImprimerInfoThread();
-            Stopwatch timer = Stopwatch.StartNew();
 
             Console.WriteLine("Début des méthodes en parallèle");
             Task pain = Task.Run(PreparerPate);
@@ -25,8 +23,7 @@ namespace ExempleCollisionThread
             Task[] tasks = { pain, cuirePain, casseTete };
             Task.WaitAll(tasks);
 
-            Console.WriteLine($"Le pain et le casse-tête sont prêts, il s'est écoulé {timer.ElapsedMilliseconds:#0} ms");
-
+            Console.WriteLine($"Le pain et le casse-tête sont prêts.");
         }
 
         public static void PreparerPate()

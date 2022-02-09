@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace ExempleCollisionThread
+namespace AtelierThreads
 {
     class ExemplePasDeThreads
     {
@@ -13,14 +12,13 @@ namespace ExempleCollisionThread
         {
             // BenchmarkRunner.Run<StringBenchmarkPerformance>();
             ThreadUtils.ImprimerInfoThread();
-            Stopwatch timer = Stopwatch.StartNew();
 
             Console.WriteLine("Début des méthodes une après l'autre");
             CuireDuPain();
             EcouterLaRadio();
             FaireUnCasseTete();
 
-            Console.WriteLine($"Le pain et le casse-tête sont prêts, il s'est écoulé {timer.ElapsedMilliseconds:#0} ms");
+            Console.WriteLine($"Le pain et le casse-tête sont prêts.");
         }
 
         public static void CuireDuPain()
