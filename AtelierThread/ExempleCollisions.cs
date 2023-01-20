@@ -41,7 +41,7 @@ namespace AtelierThreads
             }
         }
 
-        private RessourcePartagee ressourcePartagee = new RessourcePartagee();
+        private readonly RessourcePartagee ressourcePartagee = new RessourcePartagee();
 
         public const int NB_THREADS = 15;
         public const int NB_INCREMENTATIONS = 1_000_000;

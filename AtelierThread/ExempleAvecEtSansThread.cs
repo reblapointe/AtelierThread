@@ -6,11 +6,26 @@ using System.Threading.Tasks;
 
 namespace AtelierThreads
 {
-    class ExemplePasDeThreads
+    class ExempleAvecEtSansThread
     {
-        public static void RunExemplePasDeThreads()
+        public static void RunExempleThreadsManages()
         {
             // BenchmarkRunner.Run<StringBenchmarkPerformance>();
+            ThreadUtils.ImprimerInfoThread();
+
+            Console.WriteLine("Début des méthodes en parallèle");
+            Task pain = Task.Run(PreparerPate);
+            Task radio = Task.Run(EcouterLaRadio);
+            Task cuirePain = pain.ContinueWith(antecedant => CuireDuPain());
+            Task casseTete = pain.ContinueWith(antecedant => FaireUnCasseTete());
+
+            Task.WaitAll(pain, cuirePain, casseTete);
+
+            Console.WriteLine($"Le pain et le casse-tête sont prêts.");
+        }
+
+        public static void RunExemplePasDeThreads()
+        {
             ThreadUtils.ImprimerInfoThread();
 
             Console.WriteLine("Début des méthodes une après l'autre");
@@ -21,11 +36,22 @@ namespace AtelierThreads
             Console.WriteLine($"Le pain et le casse-tête sont prêts.");
         }
 
+
+        public static void PreparerPate()
+        {
+            Console.WriteLine("Je prepare la pâte à pain");
+            ThreadUtils.ImprimerInfoThread();
+
+            ThreadUtils.PedalerDansLeVide(30_000_000);
+            Console.WriteLine("La pâte est prête");
+        }
+
         public static void CuireDuPain()
         {
             Console.WriteLine("Le pain cuit...");
             ThreadUtils.ImprimerInfoThread();
-            Thread.Sleep(3000); // On attend 3 secondes
+
+            ThreadUtils.PedalerDansLeVide(50_000_000);
             Console.WriteLine("Le pain est cuit");
         }
 
@@ -33,7 +59,8 @@ namespace AtelierThreads
         {
             Console.WriteLine("Commencer à écouter la radio...");
             ThreadUtils.ImprimerInfoThread();
-            Thread.Sleep(2000); // On attend 2 secondes
+
+            ThreadUtils.PedalerDansLeVide(100_000_000);
             Console.WriteLine("Fin de l'émission de radio.");
         }
 
@@ -41,7 +68,7 @@ namespace AtelierThreads
         {
             Console.WriteLine("Commencer le casse-tête...");
             ThreadUtils.ImprimerInfoThread();
-            Thread.Sleep(1000); // On attend 1 seconde
+            ThreadUtils.PedalerDansLeVide(100_000_000);
             Console.WriteLine("Le casse tête est terminé.");
         }
     }

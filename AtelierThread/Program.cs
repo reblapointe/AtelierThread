@@ -7,16 +7,16 @@ namespace AtelierThreads
 {
     class Program
     {
-        public static void Main(string[] args)
+        public static void Main(string[] _)
         {
             Stopwatch timer = Stopwatch.StartNew();
             Console.WriteLine($"{Environment.NewLine}{Environment.NewLine}Exemple sans threads");
-            ExemplePasDeThreads.RunExemplePasDeThreads();
+            ExempleAvecEtSansThread.RunExemplePasDeThreads();
             Console.WriteLine($"Il s'est écoulé {timer.ElapsedMilliseconds} ms");
             timer.Restart();
 
             Console.WriteLine($"{Environment.NewLine}{Environment.NewLine}Exemple avec threads");
-            ExempleThreadsManages.RunExempleThreadsManages();
+            ExempleAvecEtSansThread.RunExempleThreadsManages();
             Console.WriteLine($"Il s'est écoulé {timer.ElapsedMilliseconds:#0} ms");
             timer.Restart();
 
