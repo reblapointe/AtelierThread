@@ -22,9 +22,7 @@ namespace AtelierThreads
             Task b = Task.Run(MethodeB);
             Task c = Task.Run(MethodeC);
 
-            Task[] tasks = { a, b, c };
-
-            Task.WaitAll(tasks);
+            Task.WaitAll(a, b, c);
 
             Console.WriteLine($"\nPhrase {(phrase.Length)} = {phrase}");
         }

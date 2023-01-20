@@ -10,7 +10,6 @@ namespace AtelierThreads
     {
         public static void RunExempleThreadsManages()
         {
-
             // BenchmarkRunner.Run<StringBenchmarkPerformance>();
             ThreadUtils.ImprimerInfoThread();
 
